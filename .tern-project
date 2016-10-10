@@ -1,0 +1,11 @@
+{
+  "ecmaVersion": 6,
+  "libs": [
+<<<<<<< HEAD
+    "browser"
+=======
+    "browser",
+    "jquery"
+>>>>>>> d005664d998b4066d1d147b9d574f0681b371def
+  ]
+}

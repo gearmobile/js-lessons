@@ -1,0 +1,74 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+}
+
+#anima {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: salmon;
+}
+
+#get {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    padding: 20px 40px;
+    border: 3px solid firebrick;
+    background-color: sandybrown;
+    border-radius: 10px;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: 20px;
+    color: firebrick;
+}
+
+#get:focus {
+    outline: none;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 20px;
+    font-size: 60px;
+}
+
+#top {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    border-radius: 10px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border: 1px solid #000;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border: 1px solid #000;
+    padding: 20px 40px;
+    background-color: navajowhite;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    text-decoration: none;
+}
