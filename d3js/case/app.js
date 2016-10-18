@@ -6,9 +6,8 @@ window.addEventListener( 'load', function () {
     const BAR_HEIGHT = 30;
     //
     // SET PADDING AND HEIGHT OF BARS
-    const BAR_SPACING_TOP = 1;
-    const BAR_SPACING_BOTTOM = BAR_SPACING_TOP;
-    const BAR_HEIGHT_ACTUAL = BAR_HEIGHT - BAR_SPACING_TOP - BAR_SPACING_BOTTOM;
+    // const BAR_SPACING_TOP = 1;
+    // const BAR_HEIGHT_ACTUAL = BAR_HEIGHT - BAR_SPACING_TOP;
     //
     // SET MIN AND MAX VALUES
     const RANDOM_MIN = 10;
@@ -20,22 +19,24 @@ window.addEventListener( 'load', function () {
     }
     //
     // SET ARRAY
-    const BAR_QUANTITY = 10;
+    const BAR_QUANTITY = 20;
     let dataSet = [];
     for ( let i = 0; i < BAR_QUANTITY; i++ ) {
         dataSet.push( iRand( RANDOM_MIN, RANDOM_MAX ) );
     }
-    let dataSet_MIN = d3.min( dataSet );
+    // let dataSet_MIN = d3.min( dataSet );
     let dataSet_MAX = d3.max( dataSet );
     // ----------------------------------------------------------------
-    // https://www.dashingd3js.com/d3js-scales - picture of scale
-    // SET xScale
-    // d3.scale.linear() - d3.v3
-    // d3.scaleLinear() - d3.v4
-    // ----------------------------------------------------------------
     let xScale = d3.scaleLinear()
-        .domain([ dataSet_MIN, dataSet_MAX ])
-        .range([ 20, WIDTH_PLOT ]);
+        .domain([ 0, dataSet_MAX ])
+        .range([ 0, WIDTH_PLOT ]);
+    //
+    let yScale = d3.scaleBand()
+        .domain( d3.range( 0, dataSet.length ) )
+        .range([ 0, HEIGHT_PLOT ])
+        .padding( 0.1 );
+    //
+    let colors = d3.scaleOrdinal( d3.schemeCategory20b );
     //
     // SET PLOT
     let plot = d3.select( 'body' )
@@ -53,9 +54,12 @@ window.addEventListener( 'load', function () {
         .attr( 'width', function ( d ) {
             return xScale( d );
         })
-        .attr( 'height', BAR_HEIGHT_ACTUAL )
+        .attr( 'height', yScale.bandwidth() )
         .attr( 'x', 0 )
         .attr( 'y', function ( d, i ) {
-            return i * BAR_HEIGHT ;
+            return yScale(i);
+        })
+        .attr( 'fill', function ( d, i ) {
+            return colors( i );
         });
 }, false );
