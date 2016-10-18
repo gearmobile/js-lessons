@@ -20,13 +20,13 @@ window.addEventListener( 'load', function () {
     }
     //
     // SET ARRAY
-    const BAR_QUANTITY = 20;
+    const BAR_QUANTITY = 10;
     let dataSet = [];
     for ( let i = 0; i < BAR_QUANTITY; i++ ) {
         dataSet.push( iRand( RANDOM_MIN, RANDOM_MAX ) );
     }
-    let maxValue = d3.max( dataSet );
-    let minValue = d3.min( dataSet );
+    let dataSet_MIN = d3.min( dataSet );
+    let dataSet_MAX = d3.max( dataSet );
     // ----------------------------------------------------------------
     // https://www.dashingd3js.com/d3js-scales - picture of scale
     // SET xScale
@@ -34,14 +34,8 @@ window.addEventListener( 'load', function () {
     // d3.scaleLinear() - d3.v4
     // ----------------------------------------------------------------
     let xScale = d3.scaleLinear()
-        .domain([ minValue, maxValue ])
-        .range([ 0, WIDTH_PLOT ]);
-    //
-    // set yScale
-    let yScale = d3.scaleLinear()
-        .domain([ 0, dataSet.length ])
-        .range([ 0, HEIGHT_PLOT ], 0.02, 0);
-    console.log( yScale( 20 ) );
+        .domain([ dataSet_MIN, dataSet_MAX ])
+        .range([ 20, WIDTH_PLOT ]);
     //
     // SET PLOT
     let plot = d3.select( 'body' )
