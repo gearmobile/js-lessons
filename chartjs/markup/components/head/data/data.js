@@ -6,5 +6,9 @@ head: {
     one: {
         title: 'Line Chart',
         useSocialMetaTags: true
+    },
+    two: {
+        title: 'Bar Chart',
+        useSocialMetaTags: true
     }
 }
