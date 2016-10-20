@@ -10,5 +10,9 @@ head: {
     secondo: {
         title: 'Bar Chart',
         useSocialMetaTags: true
+    },
+    tetro: {
+        title: 'Radar Chart',
+        useSocialMetaTags: true
     }
 }
