@@ -1,12 +1,10 @@
-const Chart = require( 'chart.js' );
+var Chart = require( 'chart.js' );
 
 window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // GET ELEMENT
     // -----------------------------------------------------------
-    const plot = document.querySelector( '.lineChart' );
-    plot.width = 600;
-    plot.height = 400;
+    var plot = document.querySelector( '.lineChart' );
     // -----------------------------------------------------------
     // SET GLOBAL CONFIGURATION
     // -----------------------------------------------------------
@@ -18,7 +16,7 @@ window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // SET DATA
     // ----------------- ------------------------------------------
-    const data = {
+    var data = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
         datasets: [
             {
@@ -30,7 +28,7 @@ window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // SET COMPLEX DATA
     // -----------------------------------------------------------
-    const complexData = {
+    var complexData = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'September' ],
         datasets: [
             {
@@ -53,7 +51,7 @@ window.addEventListener( 'load', function () {
                 pointRadius: 1,
                 pointHitRadius: 10,
                 data: [ 65, 59, 80, 81, 56, 55, 40, 20 ],
-                spanGaps: false,
+                spanGaps: false
             },
             {
                 label: 'Second Complex Line Chart',
@@ -75,14 +73,14 @@ window.addEventListener( 'load', function () {
                 pointRadius: 1,
                 pointHitRadius: 10,
                 data: [ 75, 69, 90, 31, 26, 105, 30, 200 ],
-                spanGaps: false,
+                spanGaps: false
             }
         ]
     };
     // -----------------------------------------------------------
     // SET LINE CHART OPTIONS
     // -----------------------------------------------------------
-    const lineChartOptions = {
+    var lineChartOptions = {
         scales: {
             xAxes: [{
                 display: false
