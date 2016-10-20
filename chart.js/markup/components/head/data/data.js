@@ -18,5 +18,9 @@ head: {
     quattro: {
         title: 'Polar Chart',
         useSocialMetaTags: true
+    },
+    cinque: {
+        title: 'Pie Chart',
+            useSocialMetaTags: true
     }
 }
