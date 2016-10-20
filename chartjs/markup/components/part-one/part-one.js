@@ -8,8 +8,16 @@ window.addEventListener( 'load', function () {
     plot.width = 600;
     plot.height = 400;
     // -----------------------------------------------------------
-    // SET DATA
+    // SET GLOBAL CONFIGURATION
     // -----------------------------------------------------------
+    Chart.defaults.global.tooltips.enabled = false;
+    Chart.defaults.global.animation.duration = 600;
+    Chart.defaults.global.animation.onComplete = function () {
+        console.log( 'Animation completed' );
+    };
+    // -----------------------------------------------------------
+    // SET DATA
+    // ----------------- ------------------------------------------
     const data = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
         datasets: [
