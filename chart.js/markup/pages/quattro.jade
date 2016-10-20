@@ -2,16 +2,17 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head
+    include ../components/quattro/quattro
     include ../components/footer/footer
 
     head
-        +head(head.defaults)
+        +head(head.quattro)
     body.page
         |%=symbols=%
 
         section.page__wrapper
 
-            //- Include your components here
+            +quattro()
 
             .page__buffer
 

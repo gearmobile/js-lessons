@@ -14,5 +14,9 @@ head: {
     tetro: {
         title: 'Radar Chart',
         useSocialMetaTags: true
+    },
+    quattro: {
+        title: 'Polar Chart',
+        useSocialMetaTags: true
     }
 }
