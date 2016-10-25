@@ -1,15 +1,17 @@
 const Chart = require( 'chart.js' );
 
 window.addEventListener( 'load', function () {
+    // -------------------------------------------------------
     // FUNCTION TRANSLATE DEGREES TO RADIANS
-    // ---------------------------------------------------
+    // -------------------------------------------------------
     Math.radians = function ( degrees ) {
         return degrees * Math.PI / 180;
     };
     //
     let plotPieChart = document.querySelector( '#pie-chart' );
+    // -------------------------------------------------------
     // DATA PIE CHART
-    // ---------------------------------------------------
+    // -------------------------------------------------------
     const dataPieChart = {
         labels: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Angular' ],
         datasets: [
@@ -20,6 +22,7 @@ window.addEventListener( 'load', function () {
             }
         ]
     };
+    // -------------------------------------------------------
     // OPTIONS PIE CHART
     // -------------------------------------------------------
     const optionsPieChart = {
@@ -27,6 +30,7 @@ window.addEventListener( 'load', function () {
             animateScale: true
         }
     };
+    // -------------------------------------------------------
     // PIE CHART
     // -------------------------------------------------------
     const pieChart = new Chart( plotPieChart, {

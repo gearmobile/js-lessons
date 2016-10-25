@@ -2,17 +2,17 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head
-    include ../components/sei/sei
+    include ../components/sedici/sedici
     include ../components/footer/footer
 
     head
-        +head(head.sei)
+        +head(head.sedici)
     body.page
         |%=symbols=%
 
         section.page__wrapper
 
-            +sei()
+            +sedici()
 
             .page__buffer
 

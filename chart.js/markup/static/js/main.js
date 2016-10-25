@@ -8,3 +8,4 @@ require( '../../components/tetro/tetro' );
 require( '../../components/quattro/quattro' );
 require( '../../components/cinque/cinque' );
 require( '../../components/sei/sei' );
+require( '../../components/sedici/sedici' );

@@ -21,6 +21,14 @@ head: {
     },
     cinque: {
         title: 'Pie Chart',
-            useSocialMetaTags: true
+        useSocialMetaTags: true
+    },
+    sei: {
+        title: 'Doughnut Chart',
+        useSocialMetaTags: true
+    },
+    sedici: {
+        title: 'Line Chart - Options',
+        useSocialMetaTags: true
     }
 }
