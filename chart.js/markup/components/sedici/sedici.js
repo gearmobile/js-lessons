@@ -1,10 +1,11 @@
-var Chart = require( 'chart.js' );
-
+// ---------------------------------------------------
+const Chart = require( 'chart.js' );
+// ---------------------------------------------------
 window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // GET ELEMENT
     // -----------------------------------------------------------
-    var plot = document.querySelector( '#lineChart' );
+    const plot = document.querySelector( '#lineChart' );
     // -----------------------------------------------------------
     // SET GLOBAL CONFIGURATION
     // -----------------------------------------------------------
@@ -16,7 +17,7 @@ window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // SET DATA
     // ----------------- ------------------------------------------
-    var data = {
+    const data = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July' ],
         datasets: [
             {
@@ -28,7 +29,7 @@ window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // SET COMPLEX DATA
     // -----------------------------------------------------------
-    var complexData = {
+    const complexData = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'September' ],
         datasets: [
             {
@@ -80,7 +81,7 @@ window.addEventListener( 'load', function () {
     // -----------------------------------------------------------
     // SET LINE CHART OPTIONS
     // -----------------------------------------------------------
-    var lineChartOptions = {
+    const lineChartOptions = {
         scales: {
             xAxes: [{
                 display: false
@@ -95,7 +96,7 @@ window.addEventListener( 'load', function () {
     // ---------------------------------------------------------------
     // SET CHART
     // ---------------------------------------------------------------
-    let lineChart = new Chart( plot, {
+    const lineChart = new Chart( plot, {
         type: 'line',
         data: complexData,
         options: lineChartOptions

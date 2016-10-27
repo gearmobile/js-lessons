@@ -1,12 +1,11 @@
+// ---------------------------------------------------
 const Chart = require( 'chart.js' );
-
+// ---------------------------------------------------
 window.addEventListener( 'load', function () {
-    //
+    // ---------------------------------------------------
     let plotBarChart = document.querySelector( '#bar-chart' );
-    plotBarChart.width = 800;
-    plotBarChart.height = 400;
     Chart.defaults.scale.ticks.beginAtZero = true;
-    //
+    // ---------------------------------------------------
     const dataBarChart = {
         labels: [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August' ],
         datasets: [
@@ -18,9 +17,10 @@ window.addEventListener( 'load', function () {
             }
         ]
     };
-    //
+    // ---------------------------------------------------
     const barChart = new Chart( plotBarChart, {
         type: 'bar',
         data: dataBarChart
     });
+    // ---------------------------------------------------
 }, false );

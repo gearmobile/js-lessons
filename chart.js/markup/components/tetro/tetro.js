@@ -1,12 +1,13 @@
+// ---------------------------------------------------
 const Chart = require( 'chart.js' );
-
+// ---------------------------------------------------
 window.addEventListener( 'load', function () {
-    //
+    // ---------------------------------------------------
     let plotRadarChart = document.querySelector( '#radar-chart' );
-    //
+    // ---------------------------------------------------
     Chart.defaults.global.animation.duration = 500;
     Chart.defaults.scale.ticks.beginAtZero = true;
-    //
+    // ---------------------------------------------------
     const dataRadarChart = {
         labels: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Angular', 'jQuery' ],
         datasets: [
@@ -26,8 +27,10 @@ window.addEventListener( 'load', function () {
             }
         ]
     };
+    // ---------------------------------------------------
     let radarChart = new Chart( plotRadarChart, {
         type: 'radar',
         data: dataRadarChart
     });
+    // ---------------------------------------------------
 }, false );

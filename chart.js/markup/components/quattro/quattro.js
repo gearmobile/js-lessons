@@ -1,9 +1,10 @@
+// ---------------------------------------------------
 const Chart = require( 'chart.js' );
-
+// ---------------------------------------------------
 window.addEventListener( 'load', function () {
-    //
+    // ---------------------------------------------------
     let plotPolarChart = document.querySelector( '#polar-chart' );
-    //
+    // ---------------------------------------------------
     const dataPolarChart = {
         labels: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Angular' ],
         datasets: [
@@ -14,7 +15,7 @@ window.addEventListener( 'load', function () {
             }
         ]
     };
-    //
+    // ---------------------------------------------------
     const optionsPolarChart = {
         animation: {
             // animateRotate: false,
@@ -27,11 +28,11 @@ window.addEventListener( 'load', function () {
             }
         }
     };
-    //
+    // ---------------------------------------------------
     const polarChart = new Chart( plotPolarChart, {
         type: 'polarArea',
         data: dataPolarChart,
         options: optionsPolarChart
     });
-    //
+    // ---------------------------------------------------
 }, false );

@@ -1,5 +1,6 @@
+// ---------------------------------------------------
 const Chart = require( 'chart.js' );
-
+// ---------------------------------------------------
 window.addEventListener( 'load', function () {
     // -------------------------------------------------------
     // FUNCTION TRANSLATE DEGREES TO RADIANS
@@ -7,7 +8,7 @@ window.addEventListener( 'load', function () {
     Math.radians = function ( degrees ) {
         return degrees * Math.PI / 180;
     };
-    //
+    // ---------------------------------------------------
     let plotPieChart = document.querySelector( '#pie-chart' );
     // -------------------------------------------------------
     // DATA PIE CHART

@@ -2,14 +2,13 @@
 const Chart = require( 'chart.js' );
 // ------------------------------------------------------
 window.addEventListener( 'load', function () {
+    // ---------------------------------------------------
     // DEFINE PLOT
     // ---------------------------------------------------
     let plotLineChart = document.querySelector( '#line-chart' );
-    plotLineChart.width = 800;
-    plotLineChart.height = 400;
-    //
+    // ---------------------------------------------------
     Chart.defaults.scale.ticks.beginAtZero = true;
-    //
+    // ---------------------------------------------------
     const data = {
         labels: [ 'Uno', 'Duo', 'Tre', 'Quattro', 'Cinque', 'Sei', 'Sedici' ],
         datasets: [
@@ -29,10 +28,12 @@ window.addEventListener( 'load', function () {
             }
         ]
     };
+    // ---------------------------------------------------
     const barChart = new Chart( plotLineChart, {
         type: 'line',
         data: data
     });
+    // ---------------------------------------------------
 }, false );
 // ------------------------------------------------------
 
