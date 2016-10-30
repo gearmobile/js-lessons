@@ -2,42 +2,29 @@
 const Chart = require( 'chart.js' );
 // ---------------------------------------------------
 window.addEventListener( 'load', function () {
-    // -------------------------------------------------------
-    // FUNCTION TRANSLATE DEGREES TO RADIANS
-    // -------------------------------------------------------
-    Math.radians = function ( degrees ) {
-        return degrees * Math.PI / 180;
-    };
     // ---------------------------------------------------
     let plotPieChart = document.querySelector( '#pie-chart' );
-    // -------------------------------------------------------
-    // DATA PIE CHART
-    // -------------------------------------------------------
-    const dataPieChart = {
+    plotPieChart.height = 130;
+    const dataPie = {
         labels: [ 'HTML', 'CSS', 'JavaScript', 'React', 'Angular' ],
         datasets: [
             {
                 label: 'Frontend Developer Skills',
-                backgroundColor: [ '#5bc0eb', '#fde74c', '#9bc53d', '#e55934', '#fa7921' ],
+                backgroundColor: [ '#404f66', '#87aaa3', '#afd9d7', '#f9f1e6', '#f2c397' ],
                 data: [ 98, 92, 78, 66, 23 ]
             }
         ]
     };
-    // -------------------------------------------------------
-    // OPTIONS PIE CHART
-    // -------------------------------------------------------
-    const optionsPieChart = {
+    const optionsPie = {
         animation: {
+            duration: 2000,
             animateScale: true
         }
     };
-    // -------------------------------------------------------
-    // PIE CHART
-    // -------------------------------------------------------
     const pieChart = new Chart( plotPieChart, {
         type: 'pie',
-        data: dataPieChart,
-        options: optionsPieChart
+        data: dataPie,
+        options: optionsPie
     });
-    // -------------------------------------------------------
+    // ---------------------------------------------------
 }, false );
