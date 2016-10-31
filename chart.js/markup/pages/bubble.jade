@@ -2,17 +2,17 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head
-    include ../components/cinque/cinque
+    include ../components/bubble/bubble
     include ../components/footer/footer
 
     head
-        +head(head.cinque)
+        +head(head.defaults)
     body.page
         |%=symbols=%
 
         section.page__wrapper
 
-            +cinque()
+            +bubble()
 
             .page__buffer
 

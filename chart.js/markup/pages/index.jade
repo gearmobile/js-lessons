@@ -1,8 +1,8 @@
 doctype html
-html(class="no-js", lang="ru")
+html( class="no-js", lang="ru" )
 
     include ../components/head/head
-    include ../components/example/example
+    include ../components/scatter/scatter
     include ../components/footer/footer
 
     head
@@ -12,9 +12,7 @@ html(class="no-js", lang="ru")
 
         section.page__wrapper
 
-            //- Include your components here
-            +example()
-
+            +scatter()
             .page__buffer
 
         .page__footer
