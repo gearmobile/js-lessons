@@ -14,5 +14,9 @@ head: {
     stacked: {
         title: 'Chart.js - Stacked Chart',
         useSocialMetaTags: true
+    },
+    mixed: {
+        title: 'Chart.js - Mixed Chart',
+        useSocialMetaTags: true
     }
 }
