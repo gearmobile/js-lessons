@@ -2,17 +2,17 @@ doctype html
 html(class="no-js", lang="ru")
 
     include ../components/head/head
-    include ../components/stacked/stacked
+    include ../components/scatter/scatter
     include ../components/footer/footer
 
     head
-        +head(head.stacked)
+        +head(head.scatter)
     body.page
         |%=symbols=%
 
         section.page__wrapper
 
-            +stacked()
+            +scatter()
 
             .page__buffer
 
