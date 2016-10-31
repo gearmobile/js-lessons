@@ -1,8 +1,10 @@
+// -------------------------------------------
 const Chart = require( 'chart.js' );
-
+// -------------------------------------------
 window.addEventListener( 'load', function () {
     // -------------------------------------------
     let bubblePlot = document.querySelector( '#bubble' );
+    bubblePlot.height = 100;
     // -------------------------------------------
     const bubbleData = {
         datasets: [
@@ -57,13 +59,20 @@ window.addEventListener( 'load', function () {
     };
     // ------------------------------------------
     const bubbleOptions = {
-        //
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            ]
+        }
     };
-    // ------------------------------------------
-    const bubbleOptions = {};
     // -------------------------------------------
     const bubble = new Chart( bubblePlot, {
         type: 'bubble',
-        data: bubbleData
+        data: bubbleData,
+        options: bubbleOptions
     });
 }, false );
