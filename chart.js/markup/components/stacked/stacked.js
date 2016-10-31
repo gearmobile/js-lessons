@@ -32,16 +32,46 @@ window.addEventListener( 'load', function () {
     const optionsStacked = {
         scales: {
             xAxes: [{
-                stacked: true
+                stacked: true, // stacked
+                ticks: {
+                    beginAtZero: true,
+                    fontColor: 'maroon',
+                    fontWeight: 700,
+                    fontSize: 12,
+                    fontFamily: 'sans-serif'
+                },
+                gridLines: {
+                    color: 'green',
+                    zeroLineColor: 'white',
+                    zeroLineWidth: 0
+                }
             }],
             yAxes: [{
-                stacked: true
+                stacked: true, // stacked
+                gridLines: {
+                    display: false
+                },
+                ticks: {
+                    fontColor: 'firebrick',
+                    fontSize: 16,
+                    fontWeight: 700
+                }
             }]
-        }
+        },
+        tooltips: {
+            enabled: false
+        },
+        hover: {
+            animationDuration: 500
+        },
+        // legend: {
+        //     display: false
+        // }
     };
     // ------------------------------------------------------------
     const stacked = new Chart( plotStacked, {
-        type: 'bar',
+        // type: 'bar',
+        type: 'horizontalBar',
         data: dataStacked,
         options: optionsStacked
     });
