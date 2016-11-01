@@ -4,7 +4,7 @@ const Chart = require( 'chart.js' );
 window.addEventListener( 'load', function () {
     // ------------------------------------------
     const mixedPlot = document.querySelector( '#mixed' );
-    // ------------------------------------------
+    mixedPlot.height = 130;
     const mixedData = {
         labels: [ 'Uno', 'Duo', 'Tre', 'Quattro' ],
         datasets: [
@@ -23,12 +23,10 @@ window.addEventListener( 'load', function () {
                 backgroundColor: 'salmon',
                 borderColor: 'firebrick',
                 borderWidth: 3
-            }
+            },
         ]
     };
-    // ------------------------------------------
     const mixedOptions = {};
-    // ------------------------------------------
     const mixedCanvas = new Chart( mixedPlot, {
         type: 'bar',
         data: mixedData,
