@@ -8,12 +8,13 @@ window.addEventListener( 'load', function () {
     const elementTre = document.querySelector( '#box-item-three' );
     const elementQuattro = document.querySelector( '#box-item-four' );
     // ------------------------------------------------------------------
-    const duration = 3;
-    const xDistance = 900;
+    const duration = 2;
+    const xDistance = 800;
     const alpha = 0.3;
     let delayValue = 1;
+    const easing = Power4.easeOut;
     // ------------------------------------------------------------------
-    const tl = new TweenlineLite();
+    const tl = new TimelineLite();
     // ------------------------------------------------------------------
     // USING TWEENLITE
     // ------------------------------------------------------------------
@@ -25,8 +26,8 @@ window.addEventListener( 'load', function () {
     // USING TWEENLINELITE
     // ------------------------------------------------------------------
     tl
-        .to( elementUno, duration, { x: xDistance, autoAlpha: alpha, ease: Elastic.easeOut } )
-        .to( elementDuo, duration, { x: xDistance, autoAlpha: alpha, ease: Elastic.easeOut } )
-        .to( elementTre, duration, { x: xDistance, autoAlpha: alpha, ease: Elastic.easeOut } )
-        .to( elementQuattro, duration, { x: xDistance, autoAlpha: alpha, ease: Elastic.easeOut } );
+        .to( elementUno, duration, { x: xDistance, autoAlpha: alpha, ease: easing } )
+        .to( elementDuo, duration, { x: xDistance, autoAlpha: alpha, ease: easing }, '-=1.4' )
+        .to( elementTre, duration, { x: xDistance, autoAlpha: alpha, ease: easing } )
+        .to( elementQuattro, duration, { x: xDistance, autoAlpha: alpha, ease: easing } );
 }, false );
