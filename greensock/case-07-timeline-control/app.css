@@ -1,0 +1,9 @@
+.control__button {
+    background-color: greenyellow;
+    border: 2px solid green;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-transform: capitalize;
+    font-weight: 700;
+}

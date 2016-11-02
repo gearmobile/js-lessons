@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../library/styles/common.css"/>
     <link rel="stylesheet" href="app.css">
-    <title>GSAP - 05 - TimelineLite</title>
+    <title>GSAP - 07 - Timeline Control</title>
 </head>
 <body>
     <!--MARKUP-->
@@ -16,6 +16,18 @@
         <li id="box-item-three" class="box-item">3</li>
         <li id="box-item-four" class="box-item">4</li>
     </ul>
+    <!--CONTROL BUTTONS-->
+    <nav class="control">
+        <button class="control__button" type="button" id="play">play</button>
+        <button class="control__button" type="button" id="pause">pause</button>
+        <button class="control__button" type="button" id="resume">resume</button>
+        <button class="control__button" type="button" id="reverse">reverse</button>
+        <button class="control__button" type="button" id="speedUp">speed up</button>
+        <button class="control__button" type="button" id="slowDown">slow down</button>
+        <button class="control__button" type="button" id="seek">seek 1 second</button>
+        <button class="control__button" type="button" id="goTo">go to 50%</button>
+        <button class="control__button" type="button" id="restart">restart</button>
+    </nav>
     <!--SCRIPTS-->
     <script src="../library/scripts/plugins/CSSPlugin.min.js"></script>
     <script src="../library/scripts/easing/EasePack.min.js"></script>
