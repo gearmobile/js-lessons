@@ -1,17 +1,26 @@
-// ----------------------------------
-//
-const TweenMax = require( 'gsap' );
-// ----------------------------------
-//
-const block = document.querySelector( '.block' );
-const duration = 2;
-const options = {
-    x: 200,
-    y: 200
-};
-// ----------------------------------
-//
-const tweenOne = TweenMax.to( block, duration, options );
-
+// ----------------------------------------
+const $ = require( 'sizzle' );
+const gsap = require( 'gsap' );
+const Timeline = gsap.TimelineMax;
+// const TimelineLite = gsap.TimelineLite;
+// const tweenLite = gsap.TweenLite;
+// const tweenMax = gsap.TweenMax;
+// const draggable = gsap.Draggable;
+// const cssPlugin = gsap.CSSPlugin;
+// ----------------------------------------
+const circlesHolder = $( '.box' );
+const circles = $( '.box-item' );
+const boxWelcome = $( '.box-welcome' );
+// ----------------------------------------
+const tlWelcome = new Timeline();
+function showLabel() {
+    tlWelcome.fromTo( boxWelcome, 2, { autoAlpha: 0, scale: 1 }, { autoAlpha: 1, scale: 1.6, x: -40, y: 40 } );
+}
+// ---------------------------------------
+const tl = new Timeline({ repeat: 2, onComplete: showLabel });
+// ----------------------------------------
+tl
+    .staggerFromTo( circles, 2, { x: 600, autoAlpha: 1 }, { x: 100, autoAlpha: 0.3 }, 0.2 )
+    .fromTo( circlesHolder, 1, { scale: 1.4, autoAlpha: 1 }, { scale: 1, autoAlpha: 0 }, 2.6 );
 
 
