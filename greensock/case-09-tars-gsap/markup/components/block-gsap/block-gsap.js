@@ -2,6 +2,7 @@
 const $ = require( 'sizzle' );
 const gsap = require( 'gsap' );
 const Timeline = gsap.TimelineMax;
+let Back = gsap.Back;
 // const TimelineLite = gsap.TimelineLite;
 // const tweenLite = gsap.TweenLite;
 // const tweenMax = gsap.TweenMax;
@@ -17,10 +18,10 @@ function showLabel() {
     tlWelcome.fromTo( boxWelcome, 2, { autoAlpha: 0, scale: 1 }, { autoAlpha: 1, scale: 1.6, x: -40, y: 40 } );
 }
 // ---------------------------------------
-const tl = new Timeline({ repeat: 2, onComplete: showLabel });
+const tlCircles = new Timeline({ repeat: 2, onComplete: showLabel });
 // ----------------------------------------
-tl
-    .staggerFromTo( circles, 2, { x: 600, autoAlpha: 1 }, { x: 100, autoAlpha: 0.3 }, 0.2 )
+tlCircles
+    .staggerFromTo( circles, 2, { x: 600, autoAlpha: 1 }, { x: 100, autoAlpha: 0.3, ease: Back.easeOut }, 0.2 )
     .fromTo( circlesHolder, 1, { scale: 1.4, autoAlpha: 1 }, { scale: 1, autoAlpha: 0 }, 2.6 );
 
 
