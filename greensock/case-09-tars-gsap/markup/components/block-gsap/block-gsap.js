@@ -2,7 +2,7 @@
 const $ = require( 'sizzle' );
 const gsap = require( 'gsap' );
 const Timeline = gsap.TimelineMax;
-let Back = gsap.Back;
+const Back = gsap.Back;
 // const TimelineLite = gsap.TimelineLite;
 // const tweenLite = gsap.TweenLite;
 // const tweenMax = gsap.TweenMax;
@@ -13,8 +13,14 @@ const circlesHolder = $( '.box' );
 const circles = $( '.box-item' );
 const boxWelcome = $( '.box-welcome' );
 // ----------------------------------------
-const tlWelcome = new Timeline();
+function textColor() {
+    const tlTextColor = new Timeline();
+    tlTextColor
+        .to( boxWelcome, 3, { color: 'green' }, '+=1' );
+}
+// ----------------------------------------
 function showLabel() {
+    const tlWelcome = new Timeline({ onComplete: textColor });
     tlWelcome.fromTo( boxWelcome, 2, { autoAlpha: 0, scale: 1 }, { autoAlpha: 1, scale: 1.6, x: -40, y: 40 } );
 }
 // ---------------------------------------
