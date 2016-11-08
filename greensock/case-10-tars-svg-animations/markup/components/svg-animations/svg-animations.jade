@@ -1,0 +1,7 @@
+mixin svg-animations(data)
+    svg#box.box
+        rect.box__wrapper
+        circle.box__circle( cx='100' cy='100' r='20' fill='#b1dec7' )
+        text.box__text( x='100' y='170' font-size='40' text-anchor='middle' fill='white' )
+            | SVG
+        circle.box__circle--stroke( cx='100' cy='100' r='95' fill='#2b4d66' )
