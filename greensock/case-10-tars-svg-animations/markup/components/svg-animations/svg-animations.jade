@@ -1,7 +1,10 @@
 mixin svg-animations(data)
-    svg#box.box
-        rect.box__wrapper
-        circle.box__circle( cx='100' cy='100' r='20' fill='#b1dec7' )
-        text.box__text( x='100' y='170' font-size='40' text-anchor='middle' fill='white' )
-            | SVG
-        circle.box__circle--stroke( cx='100' cy='100' r='95' fill='#2b4d66' )
+    .box
+        .box__html
+            p DIV
+            span
+        svg.box__svg( width='200' height='200' )
+            rect( width='100%' height='100%' fill='#2b4d66' )
+            circle( cx='100' cy='100' r='20' fill='#b1dec7' )
+            text( x='100' y='170' font-size='40' text-anchor='middle' fill='white' ) SVG
+            //circle( cx='100' cy='100' r='95' fill='#2b4d66' )
