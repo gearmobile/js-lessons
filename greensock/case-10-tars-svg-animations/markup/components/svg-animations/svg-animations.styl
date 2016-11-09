@@ -1,26 +1,29 @@
 .box
-    position: relative
-    z-index: 2
+    position: absolute;
+    z-index: 1;
+    perspective: 600px;
+    height: 100%;
+    width: 100%;
 
 .box__html
-    width: 200px
-    height: 200px
+    width: 200px;
+    height: 200px;
     background-color: lighten( #2b4d66, 10 );
     position: relative;
     
     & > p
-        margin: 0
-        font-size: 40px
+        margin: 0;
+        font-size: 40px;
         position: absolute;
-        bottom: 20px
-        width: 100%
-        text-align: center
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
         color: #fff;
 
     & > span
         width: 40px;
         height: 40px;
-        border-radius: 50%
+        border-radius: 50%;
         position: absolute;
         background-color: #b1dec7;
         top: 50%;
@@ -28,14 +31,14 @@
         transform: translate( -50%, -50% );
 
 .box__html
-    position: absolute
-    top: 0
-    left: 0
+    position: absolute;
+    top: 0;
+    left: 0;
 
 .box__svg
-    position: absolute
-    top: 0
-    left: 0
+    position: absolute;
+    top: 0;
+    left: 0;
 
 
 .control
