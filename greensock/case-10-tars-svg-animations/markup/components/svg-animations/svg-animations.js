@@ -18,9 +18,12 @@ window.addEventListener( 'load', function () {
     const boxSVG = document.querySelector( '.box__svg' );
     const boxHTMLDOT = document.querySelector( '.box__html > span' );
     const boxSVGDOT = document.querySelector( '.box__svg > circle' );
+    const boxHTMLText = document.querySelector( '.box__html > p' );
+    const boxSVGText = document.querySelector( '.box__svg > text' );
+    const welcome = document.querySelector( '.text' );
     // ---------------------------------------------------
-    let duration = 1;
-    let duration1 = 2;
+    const duration = 1;
+    const durationScale = 2;
     // ---------------------------------------------------
     function animaPlay() {
         tlMain.play();
@@ -65,9 +68,18 @@ window.addEventListener( 'load', function () {
         .to( boxHTML, duration, { x: '-50%', ease: Power2.easeNone } )
         .to( boxSVG, duration, { x: '-50%', ease: Power2.easeNone }, '-=1' )
         .addPause()
-        .to( boxHTML, duration, { rotation: 720, transformOrigin: '50% 50%', ease: Power2.easeNone } )
-        .to( boxSVG, duration, { rotation: 720, transformOrigin: '50% 50%', ease: Power2.easeNone } )
-        .addPause();
+        .to( boxHTML, duration, { rotation: 360, transformOrigin: '50% 50%', ease: Bounce.easeOut } )
+        .to( boxSVG, duration, { rotation: 360, transformOrigin: '50% 50%', ease: Bounce.easeOut } )
+        .addPause()
+        .to( boxHTMLText, duration, { autoAlpha: 0 } )
+        .to( boxSVGText, duration, { autoAlpha: 0 }, '-=1' )
+        .addPause()
+        .to( boxHTMLDOT, duration, { autoAlpha: 0 } )
+        .to( boxSVGDOT, duration, { autoAlpha: 0 }, '-=1' )
+        .addPause()
+        .to( boxHTML, durationScale, { scale: 10 } )
+        .to( boxSVG, durationScale, { scale: 10 }, '-=1' )
+        .fromTo( welcome, durationScale, { autoAlpha: 0, scale: 8 }, { autoAlpha: 1, scale: 1 } );
     // ---------------------------------------------------
     btnPlay.addEventListener( 'click', animaPlay, false );
     btnReverse.addEventListener( 'click', animaReverse, false );
