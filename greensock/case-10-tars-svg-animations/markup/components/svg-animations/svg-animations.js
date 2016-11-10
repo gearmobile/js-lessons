@@ -5,9 +5,10 @@ window.addEventListener( 'load', function () {
     // ---------------------------------------------------
     const Timeline = gsap.TimelineLite;
     const Back = gsap.Back;
-    const Elastic = gsap.Elastic;
+    const SteppedEase = gsap.SteppedEase;
     const Power2 = gsap.Power2;
     const Bounce = gsap.Bounce;
+    const Expo = gsap.Expo;
     const tlMain = new Timeline({ paused: true });
     // ---------------------------------------------------
     const btnPlay = document.querySelector( '#button-play' );
@@ -18,8 +19,8 @@ window.addEventListener( 'load', function () {
     const boxHTMLDOT = document.querySelector( '.box__html > span' );
     const boxSVGDOT = document.querySelector( '.box__svg > circle' );
     // ---------------------------------------------------
-    const duration = 1;
-    const duration1 = 2;
+    let duration = 1;
+    let duration1 = 2;
     // ---------------------------------------------------
     function animaPlay() {
         tlMain.play();
@@ -33,13 +34,13 @@ window.addEventListener( 'load', function () {
         .to( boxHTML, duration, { x: '100%', y: '100%', ease: Back.easeOut } )
         .to( boxSVG, duration, { x: '100%', y: '100%', ease: Back.easeOut } )
         .addPause()
-        .to( boxHTML, duration1, { left: '50%', top: '50%', ease: Elastic.easeOut } )
-        .to( boxSVG, duration1, { left: '50%', top: '50%', ease: Elastic.easeOut } )
+        .to( boxHTML, duration, { left: '50%', top: '50%', ease: Expo.easeOut } )
+        .to( boxSVG, duration, { left: '50%', top: '50%', ease: Expo.easeOut } )
         .addPause()
         .to( boxHTML, duration, { left: '50%', top: '50%', x: '-50%', y: '-50%', ease: Power2.easeOut } )
         .to( boxHTMLDOT, duration, { left: 0, top: 0, backgroundColor: '#dc143c', width: 60, height: 60, ease: Power2.easeOut } )
         .addPause()
-        .to( boxSVG, duration, { left: '50%', top: '50%', x: '-50%', y: '-50%', ease: Elastic.easeOut } )
+        .to( boxSVG, duration, { left: '50%', top: '50%', x: '-50%', y: '-50%', ease: SteppedEase.config(6) } )
         .to( boxSVGDOT, duration, { attr: { fill: '#f4a460', r: 30 }, ease: Power2.easeOut } )
         .addPause()
         .to( boxHTML, duration, { rotation: 90, transformOrigin: '100% 100%', ease: Bounce.easeOut } )
@@ -65,7 +66,7 @@ window.addEventListener( 'load', function () {
         .to( boxSVG, duration, { x: '-50%', ease: Power2.easeNone }, '-=1' )
         .addPause()
         .to( boxHTML, duration, { rotation: 720, transformOrigin: '50% 50%', ease: Power2.easeNone } )
-        .to( boxSVG, duration, { rotation: 720, transformOrigin: '50% 50%', ease: Power2.easeNone }, '-=1' )
+        .to( boxSVG, duration, { rotation: 720, transformOrigin: '50% 50%', ease: Power2.easeNone } )
         .addPause();
     // ---------------------------------------------------
     btnPlay.addEventListener( 'click', animaPlay, false );
