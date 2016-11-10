@@ -1,6 +1,6 @@
 head: {
     defaults: {
-        title: 'default title',
+        title: 'Pie Chart',
         useSocialMetaTags: true
     }
 }

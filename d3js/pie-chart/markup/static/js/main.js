@@ -1,5 +1,6 @@
 'use strict';
 
-/*
-    This file can be used as entry point for webpack!
- */
+// INCLUDE COMPONENTS
+// ------------------------------------------------
+require( '../../components/pie-chart/pie-chart' );
+// ------------------------------------------------
