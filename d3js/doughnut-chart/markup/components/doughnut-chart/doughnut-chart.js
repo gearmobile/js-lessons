@@ -1,14 +1,18 @@
 // ------------------------------------------------------
 const d3 = require( 'd3' );
 // ------------------------------------------------------
-
 const plotWidth = 600;
 const plotHeight = plotWidth;
-const dataSets = [ 10, 50, 80 ];
+const dataSets = [
+    { label: 'skill', value: 80 },
+    { label: 'noskill', value: 20 }
+];
+// ------------------------------------------------------
+const value = dataSets[0].value;
 const outerRadius = 300;
 const innerRadius = 200;
-const colors = d3.scaleOrdinal( [ 'red', 'green', 'blue' ] );
-
+const colors = d3.scaleOrdinal( [ 'red', 'blue' ] );
+// ------------------------------------------------------
 window.addEventListener( 'load', function () {
     // --------------------------------------------------
     let plot = d3.select( '.doughnut-chart' )
@@ -27,7 +31,7 @@ window.addEventListener( 'load', function () {
     // --------------------------------------------------
     let pie = d3.pie()
         .value( function ( d ) {
-            return d;
+            return d.value;
         });
     // --------------------------------------------------
     let arcs = plotGroup.selectAll( '.plot-arc' )
@@ -39,14 +43,18 @@ window.addEventListener( 'load', function () {
     arcs.append( 'path' )
         .attr( 'd', arc )
         .attr( 'fill', function ( d ) {
-            return colors( d.data );
+            return colors( d.value );
         });
     // --------------------------------------------------
-    plotGroup.append( 'text' )
+    let text = plotGroup.selectAll( 'text' )
+        .data( pie( dataSets ) )
+        .enter()
+        .append( 'text' )
         .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
         .attr( 'text-anchor', 'middle' )
-        .attr( 'font-size', '20px' )
+        .attr( 'font-size', '40px' )
+        .attr( 'dy', '.35em' )
         .text( function ( d ) {
-            return d.data;
+            return value + '%';
         });
 }, false );
