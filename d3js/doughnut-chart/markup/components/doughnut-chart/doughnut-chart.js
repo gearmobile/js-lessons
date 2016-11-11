@@ -4,14 +4,16 @@ const d3 = require( 'd3' );
 const plotWidth = 600;
 const plotHeight = plotWidth;
 const dataSets = [
-    { label: 'skill', value: 80 },
-    { label: 'noskill', value: 20 }
+    { label: 'html', value: 80 },
+    { label: 'none', value: 20 }
 ];
 // ------------------------------------------------------
-const value = dataSets[0].value;
+const object = dataSets[0];
+console.log( object );
 const outerRadius = 300;
 const innerRadius = 200;
 const colors = d3.scaleOrdinal( [ 'red', 'blue' ] );
+// ------------------------------------------------------
 // ------------------------------------------------------
 window.addEventListener( 'load', function () {
     // --------------------------------------------------
@@ -29,6 +31,14 @@ window.addEventListener( 'load', function () {
         .innerRadius( innerRadius )
         .outerRadius( outerRadius );
     // --------------------------------------------------
+    function pieTween( b ) {
+        b.innerRadius = 0;
+        let i = d3.interpolate( { startAngle: 0, endAngle: 0 }, b );
+        return function ( t ) {
+            return arc( i( t ) );
+        };
+    }
+    // --------------------------------------------------
     let pie = d3.pie()
         .value( function ( d ) {
             return d.value;
@@ -44,17 +54,19 @@ window.addEventListener( 'load', function () {
         .attr( 'd', arc )
         .attr( 'fill', function ( d ) {
             return colors( d.value );
-        });
+        })
+        .transition()
+        .ease( d3.easeLinear )
+        .duration( 2000 )
+        .attrTween( 'd', pieTween );
     // --------------------------------------------------
     let text = plotGroup.selectAll( 'text' )
-        .data( pie( dataSets ) )
+        .data( pie( object ) )
         .enter()
         .append( 'text' )
         .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
-        .attr( 'text-anchor', 'middle' )
-        .attr( 'font-size', '40px' )
         .attr( 'dy', '.35em' )
         .text( function ( d ) {
-            return value + '%';
+            return object.value + '%';
         });
 }, false );
