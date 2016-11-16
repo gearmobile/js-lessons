@@ -5,7 +5,7 @@
 .wrapper {
     width: 600px;
     height: 600px;
-    border: 1px solid greenyellow;
+    border: 1px solid deepskyblue;
     position: relative;
 }
 
@@ -37,8 +37,12 @@
     top: 300px;
 }
 
-.plane {
+#plane {
     position: relative;
-    font-size: 80px;
-    fill: lime;
+    z-index: 2;
+    font-size: 60px;
+    color: firebrick;
+    left: 300px;
+    top: 25px;
+    margin: -12px 0 0 -16px;
 }
