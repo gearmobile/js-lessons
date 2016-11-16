@@ -1,0 +1,44 @@
+.bezier {
+    background-position: 100% 100%;
+}
+
+.wrapper {
+    width: 600px;
+    height: 600px;
+    border: 1px solid greenyellow;
+    position: relative;
+}
+
+.point {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: limegreen;
+    position: absolute;
+}
+
+.point-1 {
+    left: 300px;
+    top: 25px;
+}
+
+.point-2 {
+    left: 550px;
+    top: 300px;
+}
+
+.point-3 {
+    left: 300px;
+    top: 550px;
+}
+
+.point-4 {
+    left: 25px;
+    top: 300px;
+}
+
+.plane {
+    position: relative;
+    font-size: 80px;
+    fill: lime;
+}
