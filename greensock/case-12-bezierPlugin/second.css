@@ -1,0 +1,52 @@
+.bezier-curve {
+    background-position: right bottom;
+}
+
+.source, .destination {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50px;
+}
+
+.source {
+    transform: translate( -300%, -100% );
+}
+
+.destination  {
+    transform: translate( 200%, -100% );
+    z-index: -1;
+}
+
+.source__box, .destination__box {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.source__box span {
+    text-transform: uppercase;
+    color: black;
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.source__box--uno {
+    background-color: lightgreen;
+}
+
+.source__box--duo {
+    background-color: forestgreen;
+}
+
+.source__box--tre {
+    background-color: darkgreen;
+}
+
+.destination__box {
+    background-color: darkgrey;
+}
