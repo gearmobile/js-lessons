@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
     <link rel="stylesheet" href="../library/styles/common.css"/>
     <link rel="stylesheet" href="snap.css">
     <title>GSAP - Snap</title>
 </head>
 <body class="snap">
-
     <div class="wrapper">
         <table class="grid">
             <tr class="grid-row">
@@ -63,12 +63,14 @@
             <span>drag me</span>
         </div>
     </div>
-
-
-
+    <div class="control">
+        <button id="control-enable" class="control-button" type="button">draggable enable</button>
+        <button id="control-disable" class="control-button" type="button">draggable disable</button>
+    </div>
     <!--SCRIPTS-->
     <script src="../library/scripts/TweenMax.min.js"></script>
     <script src="../library/scripts/plugins/ThrowPropsPlugin.min.js"></script>
     <script src="../library/scripts/utils/Draggable.min.js"></script>
+    <script src="snap.js"></script>
 </body>
 </html>
