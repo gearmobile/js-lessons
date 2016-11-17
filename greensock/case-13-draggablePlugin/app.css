@@ -2,4 +2,26 @@
     border: 2px solid whitesmoke;
     width: 90%;
     padding: 20px;
+    min-height: 620px;
+}
+
+.box-draggable .draggable-item {
+    position: absolute;
+    top: 50px;
+}
+
+.box-draggable .draggable-item--uno {
+    left: 100px;
+}
+
+.box-draggable .draggable-item--duo {
+    left: 300px;
+}
+
+.box-draggable .draggable-item--tre {
+    left: 500px;
+}
+
+.box-draggable .draggable-item--quattro {
+    left: 700px;
 }
