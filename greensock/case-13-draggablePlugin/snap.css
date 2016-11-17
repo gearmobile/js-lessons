@@ -1,0 +1,43 @@
+.wrapper {
+    position: relative;
+}
+
+.snap {
+    position: relative;
+    background-position: 100% 100%;
+    background-size: 40% 40%;
+}
+
+.grid {
+    width: 1000px;
+    height: 600px;
+    border-collapse: collapse;
+}
+
+.grid-cell {
+    border: 1px solid forestgreen;
+}
+
+.box-draggable {
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-draggable span {
+    text-transform: uppercase;
+    color: whitesmoke;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.box-draggable--uno {
+    background-color: darkgreen;
+}
+
+.box-draggable--duo {
+    background-color: tomato;
+}

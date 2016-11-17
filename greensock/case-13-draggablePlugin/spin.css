@@ -9,7 +9,7 @@
 .spin::after {
     content: '';
     display: block;
-    background-color: greenyellow;
+    background-color: firebrick;
     position: absolute;
 }
 
