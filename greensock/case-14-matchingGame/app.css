@@ -53,6 +53,17 @@ html {
     width: 50px;
     height: 50px;
     transform: translate( -50%, 0 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.draggable-item span,
+.target-item span {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 0 4px rgba( 0, 0, 0, 0.6 );
 }
 
 .draggable-item {

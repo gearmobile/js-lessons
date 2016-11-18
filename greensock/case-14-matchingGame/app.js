@@ -3,11 +3,26 @@
 // https://codepen.io/collection/KiEhr/ - splitTextPlugin
 // -----------------------------------------------
 window.addEventListener( 'load', function () {
-    // split text plugin
+
+    // consts and variables
     // ----------------------------------------------------------
     const gameTitle = new SplitText( '.game-title' );
-    const tlSplitText = new TimelineLite();
     const charsNumber = gameTitle.chars.length;
+    const imageItems = document.querySelectorAll( '.item' );
+    const draggableIcons = document.querySelectorAll( '.draggable-item' );
+    const totalScore = 6;
+    let totalHits = 0;
+    const gameContainer = document.querySelector( '.game-board' );
+
+    // timeline instances
+    // ----------------------------------------------------------
+    const tlSplitText = new TimelineMax({ onComplete: loadItemsBoard });
+
+    // set icons initial properties
+    // ----------------------------------------------------------
+    TweenMax.set( imageItems, { scale: 0, opacity: 0 } );
+
+    // split text plugin
     // ----------------------------------------------------------
     function titleSplit() {
         for ( let i = 0; i < charsNumber; i++ ) {
@@ -20,11 +35,38 @@ window.addEventListener( 'load', function () {
             }, Math.random() )
         }
     }
+
+    // make icons board draggable
+    // ----------------------------------------------------------
+    function initDraggableItems() {
+        Draggable.create( draggableIcons, {
+            type: 'x, y',
+            bounds: gameContainer,
+            edgeResistance: 0.7,
+            throwProps: true,
+            onPress: function () {
+                console.log( 'icon pressed' )
+            },
+            onDragEnd: function () {
+                console.log( 'drag end' );
+            }
+        });
+    }
+
+    // load board icons
+    // ----------------------------------------------------------
+    function loadItemsBoard() {
+        const tlItemsBoard = new TimelineMax({ onComplete: initDraggableItems });
+        tlItemsBoard.staggerTo( imageItems, 0.2, {
+            opacity: 1,
+            scale: 1,
+            force3D: true,
+            ease: Back.easeOut
+        }, 0.1 );
+    }
+
     // ----------------------------------------------------------
     titleSplit();
-    // ----------------------------------------------------------
-    const totalScore = 6;
-    let totalHits = 0;
-    const gameContainer = document.querySelector( '.game-board' );
+
     // ----------------------------------------------------------
 }, false );
