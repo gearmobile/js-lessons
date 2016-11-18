@@ -5,16 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../library/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../library/styles/common.css"/>
+    <link rel="stylesheet" href="../library/styles/normalize.css"/>
     <link rel="stylesheet" href="app.css">
-    <title>Case 14 - Matching Game</title>
+    <title>Case - 14 - Matching Game</title>
 </head>
 <body class="game">
     <!--MARKUP-->
+    <div class="game-holder">
+        <h1 class="game-title">
+            <span>GreenSock Machting Game</span>
+        </h1>
+        <div class="game-board">
+            <div class="game-board__left-side">
+                <!---->
+                <div class="draggable-item draggable-item--one"></div>
+                <div class="draggable-item draggable-item--two"></div>
+                <div class="draggable-item draggable-item--three"></div>
+                <!---->
+                <div class="draggable-item draggable-item--four"></div>
+                <div class="draggable-item draggable-item--five"></div>
+                <div class="draggable-item draggable-item--six"></div>
+                <!---->
+                <div class="draggable-item draggable-item--seven"></div>
+                <div class="draggable-item draggable-item--eight"></div>
+                <div class="draggable-item draggable-item--nine"></div>
+                <!---->
+            </div>
+            <div class="game-board__right-side">
+                <!---->
+                <div class="target-item target-item--uno"></div>
+                <div class="target-item target-item--duo"></div>
+                <div class="target-item target-item--tre"></div>
+                <!---->
+                <div class="target-item target-item--quattro"></div>
+                <div class="target-item target-item--cinque"></div>
+                <div class="target-item target-item--sei"></div>
+                <!---->
+                <div class="target-item target-item--sette"></div>
+                <div class="target-item target-item--otto"></div>
+                <div class="target-item target-item--nove"></div>
+                <!---->
+            </div>
+        </div>
+    </div>
     <!--SCRIPTS-->
     <script src="../library/scripts/TweenMax.min.js"></script>
     <script src="../library/scripts/utils/Draggable.min.js"></script>
-    <script src="../library/scripts/plugins/SplitText.min.js"></script>
+    <script src="../library/scripts/plugins/SplitText.FullVersion.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

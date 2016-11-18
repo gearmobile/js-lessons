@@ -1,0 +1,148 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+.game {
+    width: 100%;
+    height: 100%;
+}
+
+.game-holder {
+    height: 100%;
+}
+
+.game-title {
+    text-align: center;
+    padding: 20px 0 0;
+    color: darkslategrey;
+    font-size: 36px;
+}
+
+.game-board {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+    border: 1px solid grey;
+    display: flex;
+}
+
+.game-board__left-side,
+.game-board__right-side {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.game-board__left-side {
+    background-color: lightgreen;
+    border-right: 1px solid grey;
+}
+
+.game-board__right-side {
+    background-color: lightblue;
+}
+
+.draggable-item,
+.target-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    transform: translate( -50%, 0 );
+}
+
+.draggable-item {
+    background-color: indianred;
+}
+
+.target-item {
+    background-color: cornflowerblue;
+}
+
+.draggable-item--one,
+.target-item--uno {
+    top: 50px;
+    left: 50px;
+}
+
+.draggable-item--two ,
+.target-item--duo {
+    top: 50px;
+    left: 200px;
+}
+
+.draggable-item--three,
+.target-item--tre {
+    top: 50px;
+    left: 350px;
+}
+
+.draggable-item--four,
+.target-item--quattro {
+    top: 225px;
+    left: 50px;
+}
+
+.draggable-item--five,
+.target-item--cinque {
+    top: 225px;
+    left: 200px;
+}
+
+.draggable-item--six,
+.target-item--sei {
+    top: 225px;
+    left: 350px;
+}
+
+.draggable-item--seven,
+.target-item--sette {
+    top: 400px;
+    left: 50px;
+}
+
+.draggable-item--eight,
+.target-item--otto {
+    top: 400px;
+    left: 200px;
+}
+
+.draggable-item--nine,
+.target-item--nove {
+    top: 400px;
+    left: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
