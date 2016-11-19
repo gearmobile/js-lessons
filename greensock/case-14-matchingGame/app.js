@@ -45,10 +45,15 @@ window.addEventListener( 'load', function () {
             edgeResistance: 0.7,
             throwProps: true,
             onPress: function () {
-                console.log( 'icon pressed' )
+                this.startX = this.x;
+                this.startY = this.y;
             },
             onDragEnd: function () {
-                console.log( 'drag end' );
+                TweenMax.to( this.target, 0.8, {
+                    x: this.startX,
+                    y: this.startY,
+                    ease: Back.easeOut
+                });
             }
         });
     }

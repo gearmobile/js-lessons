@@ -35,3 +35,33 @@
     margin: 20px auto 0;
     background: transparent url( '../library/images/knob.png' ) 50% 50% no-repeat;
 }
+
+.knob-rotation {
+    border: 2px solid firebrick;
+    background-color: white;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    min-width: 120px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-family: 'Anonymous Pro', monospace;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
