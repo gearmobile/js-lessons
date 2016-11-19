@@ -7,9 +7,13 @@ window.addEventListener( 'load', function () {
     // consts and variables
     // ----------------------------------------------------------
     const gameTitle = new SplitText( '.game-title' );
+    const gameBoard = document.querySelector( '.game-board' );
+    let gameBoardTop = gameBoard.getBoundingClientRect().top + 1;
+    let gameBoardLeft = gameBoard.getBoundingClientRect().left + 1;
     const charsNumber = gameTitle.chars.length;
     const imageItems = document.querySelectorAll( '.item' );
     const draggableIcons = document.querySelectorAll( '.draggable-item' );
+    const targetItems = document.querySelectorAll( '.target-item' );
     const totalScore = 6;
     let totalHits = 0;
     const gameContainer = document.querySelector( '.game-board' );
@@ -47,12 +51,31 @@ window.addEventListener( 'load', function () {
             onPress: function () {
                 this.startX = this.x;
                 this.startY = this.y;
+                let position = $( this.target ).position();
+                let targetDimentions = this.target.getBoundingClientRect();
+                console.log( position.top + ' : ' + position.left );
+                console.log( ( this.startY - position.top ) + ' : ' + ( this.startX - position.left ) );
+                // console.log( ( targetDimentions.top - ( gameBoardDimentions.top + 1 ) ) + ' : ' + ( targetDimentions.left - ( gameBoardDimentions.left + 1 ) ) );
+                // console.log( targetDimentions.width + ' : ' + targetDimentions.height );
+                // console.log( gameBoard );
             },
             onDragEnd: function () {
-                TweenMax.to( this.target, 0.8, {
-                    x: this.startX,
-                    y: this.startY,
-                    ease: Back.easeOut
+                let targetID = this.target.id + '-drop';
+                let dragItem = this;
+                targetItems.forEach( function ( item ) {
+                    let itemID = item.id;
+                    if ( targetID === itemID ) {
+                        if ( dragItem.hitTest( item, '50%' ) ) {
+                            dragItem.y = item.getBoundingClientRect().top - gameBoardTop;
+                            dragItem.x = item.getBoundingClientRect().left - gameBoardLeft;
+                        } else {
+                            TweenMax.to( dragItem.target, 0.8, {
+                                x: dragItem.startX,
+                                y: dragItem.startY,
+                                ease: Back.easeOut
+                            });
+                        }
+                    }
                 });
             }
         });

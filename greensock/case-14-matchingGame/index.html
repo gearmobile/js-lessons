@@ -18,37 +18,38 @@
         <div class="game-board">
             <div class="game-board__left-side">
                 <!---->
-                <div class="item draggable-item draggable-item--one"><span>1</span></div>
-                <div class="item draggable-item draggable-item--two"><span>2</span></div>
-                <div class="item draggable-item draggable-item--three"><span>3</span></div>
+                <div id="uno" class="item draggable-item draggable-item--one"><span>1</span></div>
+                <div id="duo" class="item draggable-item draggable-item--two"><span>2</span></div>
+                <div id="tre" class="item draggable-item draggable-item--three"><span>3</span></div>
                 <!---->
-                <div class="item draggable-item draggable-item--four"><span>4</span></div>
-                <div class="item draggable-item draggable-item--five"><span>5</span></div>
-                <div class="item draggable-item draggable-item--six"><span>6</span></div>
+                <div id="quattro" class="item draggable-item draggable-item--four"><span>4</span></div>
+                <div id="cinque"  class="item draggable-item draggable-item--five"><span>5</span></div>
+                <div id="sei"     class="item draggable-item draggable-item--six"><span>6</span></div>
                 <!---->
-                <div class="item draggable-item draggable-item--seven"><span>7</span></div>
-                <div class="item draggable-item draggable-item--eight"><span>8</span></div>
-                <div class="item draggable-item draggable-item--nine"><span>9</span></div>
+                <div id="sette" class="item draggable-item draggable-item--seven"><span>7</span></div>
+                <div id="otto"  class="item draggable-item draggable-item--eight"><span>8</span></div>
+                <div id="nove"  class="item draggable-item draggable-item--nine"><span>9</span></div>
                 <!---->
             </div>
             <div class="game-board__right-side">
                 <!---->
-                <div class="item target-item target-item--uno"><span>1</span></div>
-                <div class="item target-item target-item--duo"><span>2</span></div>
-                <div class="item target-item target-item--tre"><span>3</span></div>
+                <div id="uno-drop" class="item target-item target-item--uno"><span>1</span></div>
+                <div id="duo-drop" class="item target-item target-item--duo"><span>2</span></div>
+                <div id="tre-drop" class="item target-item target-item--tre"><span>3</span></div>
                 <!---->
-                <div class="item target-item target-item--quattro"><span>4</span></div>
-                <div class="item target-item target-item--cinque"><span>5</span></div>
-                <div class="item target-item target-item--sei"><span>6</span></div>
+                <div id="quattro-drop" class="item target-item target-item--quattro"><span>4</span></div>
+                <div id="cinque-drop"  class="item target-item target-item--cinque"><span>5</span></div>
+                <div id="sei-drop"     class="item target-item target-item--sei"><span>6</span></div>
                 <!---->
-                <div class="item target-item target-item--sette"><span>7</span></div>
-                <div class="item target-item target-item--otto"><span>8</span></div>
-                <div class="item target-item target-item--nove"><span>9</span></div>
+                <div id="sette-drop" class="item target-item target-item--sette"><span>7</span></div>
+                <div id="otto-drop"  class="item target-item target-item--otto"><span>8</span></div>
+                <div id="nove-drop"  class="item target-item target-item--nove"><span>9</span></div>
                 <!---->
             </div>
         </div>
     </div>
     <!--SCRIPTS-->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="../library/scripts/utils/Draggable.min.js"></script>
     <script src="../library/scripts/plugins/ThrowPropsPlugin.min.js"></script>
     <script src="../library/scripts/plugins/SplitText.DemoVersion.min.js"></script>
