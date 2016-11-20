@@ -8,13 +8,13 @@ window.addEventListener( 'load', function () {
     // ----------------------------------------------------------
     const gameTitle = new SplitText( '.game-title' );
     const gameBoard = document.querySelector( '.game-board' );
-    const gameBoardTop = gameBoard.getBoundingClientRect().top + 1;
-    const gameBoardLeft = gameBoard.getBoundingClientRect().left + 1;
+    const borderWidth = parseInt( gameBoard.currentStyle || window.getComputedStyle( gameBoard, null ).borderWidth );
+    const gameBoardTop = gameBoard.getBoundingClientRect().top + borderWidth;
+    const gameBoardLeft = gameBoard.getBoundingClientRect().left + borderWidth;
     const charsNumber = gameTitle.chars.length;
     const imageItems = document.querySelectorAll( '.item' );
     const draggableIcons = document.querySelectorAll( '.draggable-item' );
     const targetItems = document.querySelectorAll( '.target-item' );
-    const totalScore = 6;
     let totalHits = 0;
     const gameContainer = document.querySelector( '.game-board' );
     const gameOver = document.querySelector( '.game-over' );
@@ -110,7 +110,6 @@ window.addEventListener( 'load', function () {
                             let itemPosition = item.getBoundingClientRect();
                             let diffTop = dragItem.offsetTop + ( itemPosition.top - gameBoardTop );
                             let diffLeft = dragItem.offsetLeft + ( itemPosition.left - gameBoardLeft );
-                            console.log( diffTop, diffLeft );
                             TweenMax.to( dragItem.target, 1, {
                                 x: diffLeft,
                                 y: diffTop,
