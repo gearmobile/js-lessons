@@ -47,13 +47,13 @@ window.addEventListener( 'load', function () {
         }
     }
 
-    // hide try again modal window
+    // hide popup modal window
     // ----------------------------------------------------------
     function hidePopup() {
         TweenMax.to( gameMiss, 1.4, { scale: 0, autoAlpha: 0, ease: Back.easeIn, delay: 0.1 } );
     }
 
-    // show try again modal window
+    // show popup modal window
     // ----------------------------------------------------------
     function showPopup() {
         TweenMax.to( gameMiss, 0.8, { scale: 1, autoAlpha: 1, ease: Back.easeOut, onComplete: hidePopup } );
