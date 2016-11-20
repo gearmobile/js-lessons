@@ -7,6 +7,11 @@ html {
     width: 100%;
 }
 
+@font-face {
+    src: url( ../library/fonts/Rude.ttf );
+    font-family: Rude, serif;
+}
+
 .game {
     width: 100%;
     height: 100%;
@@ -52,7 +57,6 @@ html {
     position: absolute;
     width: 50px;
     height: 50px;
-    transform: translate( -50%, 0 );
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,56 +81,82 @@ html {
 .draggable-item--one,
 .target-item--uno {
     top: 50px;
-    left: 50px;
+    left: 25px;
 }
 
 .draggable-item--two ,
 .target-item--duo {
     top: 50px;
-    left: 200px;
+    left: 175px;
 }
 
 .draggable-item--three,
 .target-item--tre {
     top: 50px;
-    left: 350px;
+    left: 325px;
 }
 
 .draggable-item--four,
 .target-item--quattro {
     top: 225px;
-    left: 50px;
+    left: 25px;
 }
 
 .draggable-item--five,
 .target-item--cinque {
     top: 225px;
-    left: 200px;
+    left: 175px;
 }
 
 .draggable-item--six,
 .target-item--sei {
     top: 225px;
-    left: 350px;
+    left: 325px;
 }
 
 .draggable-item--seven,
 .target-item--sette {
     top: 400px;
-    left: 50px;
+    left: 25px;
 }
 
 .draggable-item--eight,
 .target-item--otto {
     top: 400px;
-    left: 200px;
+    left: 175px;
 }
 
 .draggable-item--nine,
 .target-item--nove {
     top: 400px;
-    left: 350px;
+    left: 325px;
 }
+
+.game-over,
+.game-miss,
+.game-hit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+    width: 400px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba( 0, 0, 0, 0.6 );
+    border-radius: 10px;
+}
+
+.game-over span,
+.game-miss span,
+.game-hit span {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-family: Rude, serif;
+    color: #fff;
+}
+
 
 
 
