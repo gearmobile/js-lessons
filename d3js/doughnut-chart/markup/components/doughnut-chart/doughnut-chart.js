@@ -2,74 +2,63 @@
 const d3 = require( 'd3' );
 // ------------------------------------------------------
 
-window.addEventListener( 'load', function () {
-    // -----------------------------------------------------
-    const margins = {
-        top: 20,
-        right: 20,
-        bottom: 20,
-        left: 20
+// -----------------------------------------------------
+const margins = {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 20
+};
+
+// raw data
+// -----------------------------------------------------
+const urlData1 = '../data1.csv';
+const urlData2 = '../data2.csv';
+const urlData3 = '../data3.csv';
+const urlData4 = '../data4.csv';
+
+// ------------------------------------------------------
+const colorPrimary = 'cornflowerblue';
+const colorSecondary = 'cornsilk';
+const width = 300;
+const height = width;
+const plotWidth = width - margins.left - margins.right;
+const plotHeight = height - margins.top - margins.bottom;
+const plotRadius = plotWidth / 2;
+const colors = d3.scaleOrdinal( [ colorPrimary, colorSecondary ] );
+// -------------------------------------------------------
+
+// ARC GENERATOR
+// -------------------------------------------------------
+let arc = d3.arc()
+    .outerRadius( plotRadius - 10 )
+    .innerRadius( plotRadius - 60 );
+
+// PIE GENERATOR
+// -------------------------------------------------------
+let pie = d3.pie()
+    .sort( null )
+    .value( function ( d ) {
+        return d.value;
+    });
+
+// PIE TWEEN FUNCTION
+// -------------------------------------------------------
+function pieTween( b ) {
+    b.innerRadius = 0;
+    let i = d3.interpolate( { startAngle: 0, endAngle: 0 }, b );
+    return function ( t ) {
+        return arc( i( t ) );
     };
-    const urlData1 = '../data1.csv';
-    const urlData2 = '../data2.csv';
-    const urlData3 = '../data3.csv';
-    const urlData4 = '../data4.csv';
-    // ------------------------------------------------------
-    const colorPrimary = 'cornflowerblue';
-    const colorSecondary = 'cornsilk';
-    const width = 300;
-    const height = width;
-    const plotWidth = width - margins.left - margins.right;
-    const plotHeight = height - margins.top - margins.bottom;
-    const plotRadius = plotWidth / 2;
-    const colors = d3.scaleOrdinal( [ colorPrimary, colorSecondary ] );
-    // -------------------------------------------------------
+}
 
-    // arc generator
-    // -------------------------------------------------------
-    let arc = d3.arc()
-        .outerRadius( plotRadius - 10 )
-        .innerRadius( plotRadius - 60 );
-
-    // pie generator
-    // -------------------------------------------------------
-    let pie = d3.pie()
-        .sort( null )
-        .value( function ( d ) {
-            return d.value;
-        });
-
-    // pie tween function
-    // -------------------------------------------------------
-    function pieTween( b ) {
-        b.innerRadius = 0;
-        let i = d3.interpolate( { startAngle: 0, endAngle: 0 }, b );
-        return function ( t ) {
-            return arc( i( t ) );
-        };
-    }
+// function pieUno ---------------------------------------------
+// -------------------------------------------------------
+function pieUno() {
 
     // svg define
     // -------------------------------------------------------
     let plot1 = d3.select( '.doughnut-chart > .doughnut-chart__item--primo' )
-        .append( 'svg' )
-        .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
-
-    let plot2 = d3.select( '.doughnut-chart > .doughnut-chart__item--secondo' )
-        .append( 'svg' )
-        .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
-
-    let plot3 = d3.select( '.doughnut-chart > .doughnut-chart__item--tetro' )
-        .append( 'svg' )
-        .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
-
-    let plot4 = d3.select( '.doughnut-chart > .doughnut-chart__item--quattro' )
         .append( 'svg' )
         .classed( 'plot', true )
         .attr( 'width', plotWidth )
@@ -81,21 +70,11 @@ window.addEventListener( 'load', function () {
         .classed( 'plot-group', true )
         .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
 
-    let plot2Group = plot2.append( 'g' )
-        .classed( 'plot-group', true )
-        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
-
-    let plot3Group = plot3.append( 'g' )
-        .classed( 'plot-group', true )
-        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
-
-    let plot4Group = plot4.append( 'g' )
-        .classed( 'plot-group', true )
-        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
-
-    // GET DATA1
-    // -------------------------------------------------------
+    // get data from csv-file
     d3.csv( urlData1, function ( error, rawData ) {
+
+        // error check
+        // ----------------------------------------------------
         if ( error ) {
             throw error;
         }
@@ -135,20 +114,39 @@ window.addEventListener( 'load', function () {
 
         // append the text
         // -------------------------------------------------------
-        let text1 = plot1Group.selectAll( 'text' )
-            .data( pie( data1 ) )
-            .enter()
+        let text1 = plot1Group
             .append( 'text' )
             .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
             .attr( 'dy', '.35em' )
             .text( function () {
                 return data1FirstValue + '%';
             });
-    }); // end function get data1 ----------------------------------
+    });
+} // end function pieUno
 
-    // GET DATA2
+// function pieDuo ---------------------------------------------
+// -------------------------------------------------------
+function pieDuo() {
+
+    // svg define
     // -------------------------------------------------------
+    let plot2 = d3.select( '.doughnut-chart > .doughnut-chart__item--secondo' )
+        .append( 'svg' )
+        .classed( 'plot', true )
+        .attr( 'width', plotWidth )
+        .attr( 'height', plotHeight );
+
+    // plot group define
+    // -------------------------------------------------------
+    let plot2Group = plot2.append( 'g' )
+        .classed( 'plot-group', true )
+        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
+
+    // get data from csv-file
     d3.csv( urlData2, function ( error, rawData ) {
+
+        // error check
+        // ----------------------------------------------------
         if ( error ) {
             throw error;
         }
@@ -188,20 +186,39 @@ window.addEventListener( 'load', function () {
 
         // append the text
         // -------------------------------------------------------
-        let text2 = plot2Group.selectAll( 'text' )
-            .data( pie( data2 ) )
-            .enter()
+        let text2 = plot2Group
             .append( 'text' )
             .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
             .attr( 'dy', '.35em' )
             .text( function () {
                 return data2FirstValue + '%';
             });
-    }); // end function 2
+    });
+} // end function pieDuo
 
-    // GET DATA3
+// function pieTre ---------------------------------------------
+// -------------------------------------------------------
+function pieTre() {
+
+    // svg define
     // -------------------------------------------------------
+    let plot3 = d3.select( '.doughnut-chart > .doughnut-chart__item--tetro' )
+        .append( 'svg' )
+        .classed( 'plot', true )
+        .attr( 'width', plotWidth )
+        .attr( 'height', plotHeight );
+
+    // plot group define
+    // -------------------------------------------------------
+    let plot3Group = plot3.append( 'g' )
+        .classed( 'plot-group', true )
+        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
+
+    // get data from csv-file
     d3.csv( urlData3, function ( error, rawData ) {
+
+        // error check
+        // ----------------------------------------------------
         if ( error ) {
             throw error;
         }
@@ -241,20 +258,39 @@ window.addEventListener( 'load', function () {
 
         // append the text
         // -------------------------------------------------------
-        let text3 = plot3Group.selectAll( 'text' )
-            .data( pie( data3 ) )
-            .enter()
+        let text3 = plot3Group
             .append( 'text' )
             .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
             .attr( 'dy', '.35em' )
             .text( function () {
                 return data3FirstValue + '%';
             });
-    }); // end function 3 -------------------
+    });
+} // end function pieTre
 
-    // GET DATA4
+// function pieQuattro ---------------------------------------------
+// -------------------------------------------------------
+function pieQuattro() {
+
+    // svg define
     // -------------------------------------------------------
+    let plot4 = d3.select( '.doughnut-chart > .doughnut-chart__item--quattro' )
+        .append( 'svg' )
+        .classed( 'plot', true )
+        .attr( 'width', plotWidth )
+        .attr( 'height', plotHeight );
+
+    // plot group define
+    // -------------------------------------------------------
+    let plot4Group = plot4.append( 'g' )
+        .classed( 'plot-group', true )
+        .attr( 'transform', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' );
+
+    // get data from csv-file
     d3.csv( urlData4, function ( error, rawData ) {
+
+        // error check
+        // ----------------------------------------------------
         if ( error ) {
             throw error;
         }
@@ -294,15 +330,21 @@ window.addEventListener( 'load', function () {
 
         // append the text
         // -------------------------------------------------------
-        let text4 = plot4Group.selectAll( 'text' )
-            .data( pie( data4 ) )
-            .enter()
+        let text4 = plot4Group
             .append( 'text' )
             .attr( 'translate', 'translate(' + plotWidth / 2 + ',' + plotHeight / 2 + ')' )
             .attr( 'dy', '.35em' )
             .text( function () {
                 return data4FirstValue + '%';
             });
-    }); // end function 4 ----------------
-    // -----------------------------------------------------
+    });
+} // end function pieQuattro
+
+window.addEventListener( 'load', function () {
+
+    pieUno();
+    pieDuo();
+    pieTre();
+    pieQuattro();
+
 }, false );
