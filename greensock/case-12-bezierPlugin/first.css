@@ -5,7 +5,7 @@
 .wrapper {
     width: 600px;
     height: 600px;
-    border: 1px solid deepskyblue;
+    border: 1px solid firebrick;
     position: relative;
 }
 
@@ -45,4 +45,31 @@
     left: 300px;
     top: 25px;
     margin: -12px 0 0 -16px;
+}
+
+.bzBtn {
+    min-width: 100px;
+    min-height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    background-color: lightgreen;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    color: white;
+    transition: background-color .2s;
+}
+
+.bzBtn:hover {
+    background-color: seagreen;
+}
+
+.bzBtn:focus {
+    outline: none;
 }
