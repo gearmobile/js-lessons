@@ -1,5 +1,15 @@
 module.exports = {
-    "postcss": [],
+    "postcss": [
+        {
+            "name": "lost",
+            "options": {
+                "gutter": "15px"
+            }
+        },
+        {
+            "name": "postcss-flexibility"
+        }
+    ],
     "svg": {
         "active": true,
         "workflow": "sprite",

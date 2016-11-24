@@ -17,11 +17,18 @@ const urlData2 = '../data2.csv';
 const urlData3 = '../data3.csv';
 const urlData4 = '../data4.csv';
 
+// -----------------------------------------------------
+const donutPrimo = document.querySelector( '.doughnut-chart__item--primo' );
+const donutSecondo = document.querySelector( '.doughnut-chart__item--secondo' );
+const donutTetro = document.querySelector( '.doughnut-chart__item--tetro' );
+const donutQuattro = document.querySelector( '.doughnut-chart__item--quattro' );
+
 // ------------------------------------------------------
 const colorPrimary = 'cornflowerblue';
 const colorSecondary = 'cornsilk';
-const width = 300;
-const height = width;
+const width = donutPrimo.clientWidth;
+const height = donutPrimo.clientHeight;
+// console.log( width + ' : ' + height );
 const plotWidth = width - margins.left - margins.right;
 const plotHeight = height - margins.top - margins.bottom;
 const plotRadius = plotWidth / 2;
@@ -58,11 +65,13 @@ function pieUno() {
 
     // svg define
     // -------------------------------------------------------
-    let plot1 = d3.select( '.doughnut-chart > .doughnut-chart__item--primo' )
+    let plot1 = d3.select( donutPrimo )
         .append( 'svg' )
         .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
+        .attr( 'width', '100%' )
+        .attr( 'height', '100%' )
+        .attr( 'viewBox', '0 0 ' + Math.min( width, height ) + ' ' + Math.min( width, height ))
+        .attr( 'preserveAspectRatio', 'xMinYMin' );
 
     // plot group define
     // -------------------------------------------------------
@@ -130,11 +139,13 @@ function pieDuo() {
 
     // svg define
     // -------------------------------------------------------
-    let plot2 = d3.select( '.doughnut-chart > .doughnut-chart__item--secondo' )
+    let plot2 = d3.select( donutSecondo )
         .append( 'svg' )
         .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
+        .attr( 'width', '100%' )
+        .attr( 'height', '100%' )
+        .attr( 'viewBox', '0 0 ' + Math.min( width, height ) + ' ' + Math.min( width, height ))
+        .attr( 'preserveAspectRatio', 'xMinYMin' );
 
     // plot group define
     // -------------------------------------------------------
@@ -202,11 +213,13 @@ function pieTre() {
 
     // svg define
     // -------------------------------------------------------
-    let plot3 = d3.select( '.doughnut-chart > .doughnut-chart__item--tetro' )
+    let plot3 = d3.select( donutTetro )
         .append( 'svg' )
         .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
+        .attr( 'width', '100%' )
+        .attr( 'height', '100%' )
+        .attr( 'viewBox', '0 0 ' + Math.min( width, height ) + ' ' + Math.min( width, height ))
+        .attr( 'preserveAspectRatio', 'xMinYMin' );
 
     // plot group define
     // -------------------------------------------------------
@@ -274,11 +287,13 @@ function pieQuattro() {
 
     // svg define
     // -------------------------------------------------------
-    let plot4 = d3.select( '.doughnut-chart > .doughnut-chart__item--quattro' )
+    let plot4 = d3.select( donutQuattro )
         .append( 'svg' )
         .classed( 'plot', true )
-        .attr( 'width', plotWidth )
-        .attr( 'height', plotHeight );
+        .attr( 'width', '100%' )
+        .attr( 'height', '100%' )
+        .attr( 'viewBox', '0 0 ' + Math.min( width, height ) + ' ' + Math.min( width, height ))
+        .attr( 'preserveAspectRatio', 'xMinYMin' );
 
     // plot group define
     // -------------------------------------------------------
