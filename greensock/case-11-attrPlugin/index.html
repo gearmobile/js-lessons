@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../library/styles/common.css"/>
     <link rel="stylesheet" href="app.css">
-    <title>Case 01 - Attr Plugin</title>
+    <title>Case 11 - Attr Plugin</title>
 </head>
-<body>
+<body class="attr">
     <!--MARKUP-->
-    <ul class="box">
-        <li id="box-item-one" class="box-item">1</li>
-        <li id="box-item-two" class="box-item">2</li>
-        <li id="box-item-three" class="box-item">3</li>
-        <li id="box-item-four" class="box-item">4</li>
-    </ul>
+    <svg class="rect" viewBox="0 0 200 200" width="200" height="200">
+        <style type="text/css">
+            .rect-item {
+                fill: #f15a29;
+            }
+        </style>
+        <polygon class="rect-item" points="100,50 130.9,4.9 129.4,59.5 180.9,41.2 147.6,84,4 200,100 147.6,115.5 180.9,158.8 129.4,140.5 130.9,195.1 100,150 69.1,195.1 70.6,140.5 19.1,158.8 52.4,115.5 0,100 52.4,84.5 19.1,41.2 70.6,59.5 69.1,4.9" />
+    </svg>
     <!--SCRIPTS-->
     <script src="../library/scripts/TweenMax.min.js"></script>
     <script src="app.js"></script>

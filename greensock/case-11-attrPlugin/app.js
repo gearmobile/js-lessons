@@ -1,5 +1,5 @@
 window.addEventListener( 'load', function () {
     // ----------------------------------------------------------
-    const firstElement = document.querySelector( '#box-item-one' );
+    const rect = document.querySelector( '#rect-item' );
     // ----------------------------------------------------------
 }, false );
