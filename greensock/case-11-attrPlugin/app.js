@@ -35,6 +35,8 @@ window.addEventListener( 'load', function () {
         });
         // ---------------------------
         rectMorph
+            // STEP ONE
+            // -------------------------------
             .to( rect, 2, {
                 attr: {
                     points: pointsUno,
@@ -42,6 +44,8 @@ window.addEventListener( 'load', function () {
                 },
                 ease: Back.easeInOut
             })
+            // STEP TWO
+            // -------------------------------
             .to( rect, 2, {
                 attr: {
                     points: pointsDuo,
@@ -49,6 +53,8 @@ window.addEventListener( 'load', function () {
                 },
                 ease: Back.easeInOut
             })
+            // STEP THREE
+            // -------------------------------
             .to( rect, 2, {
                 attr: {
                     points: pointsTre,
