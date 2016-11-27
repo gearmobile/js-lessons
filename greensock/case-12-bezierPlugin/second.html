@@ -9,21 +9,26 @@
     <title>Case 12 - Bezier Curve</title>
 </head>
 <body class="bezier-curve">
-    <div class="source">
-        <div class="source__box source__box--uno">
-            <span>a</span>
+    <button class="button button--uno run" type="button">simple</button>
+    <button class="button button--duo run" type="button">bezier</button>
+    <button class="button button--tre run" type="button">bezier complex</button>
+    <div class="wrapper">
+        <div class="source">
+            <div class="source__box source__box--uno">
+                <span>a</span>
+            </div>
+            <div class="source__box source__box--duo">
+                <span>b</span>
+            </div>
+            <div class="source__box source__box--tre">
+                <span>c</span>
+            </div>
         </div>
-        <div class="source__box source__box--duo">
-            <span>b</span>
+        <div class="destination">
+            <div class="destination__box"></div>
+            <div class="destination__box"></div>
+            <div class="destination__box"></div>
         </div>
-        <div class="source__box source__box--tre">
-            <span>c</span>
-        </div>
-    </div>
-    <div class="destination">
-        <div class="destination__box"></div>
-        <div class="destination__box"></div>
-        <div class="destination__box"></div>
     </div>
     <!--SCRIPTS-->
     <script src="../library/scripts/TweenMax.min.js"></script>

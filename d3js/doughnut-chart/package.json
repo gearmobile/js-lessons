@@ -5,7 +5,9 @@
   "main": "gulpfile.js",
   "directories": {},
   "dependencies": {
-    "d3": "^4.3.0"
+    "d3": "^4.3.0",
+    "lost": "^7.1.1",
+    "postcss-flexibility": "^1.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1"

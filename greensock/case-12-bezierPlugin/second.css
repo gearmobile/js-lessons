@@ -1,6 +1,46 @@
 .bezier-curve {
     background-position: right bottom;
+    position: relative;
 }
+
+/* ----------------- BUTTONS ----------------- */
+
+.button {
+    min-width: 200px;
+    min-height: 40px;
+    position: absolute;
+    right: 40px;
+    border: none;
+    padding: 12px 40px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: seagreen;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: mediumseagreen;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button--uno {
+    top: 40px;
+}
+
+.button--duo {
+    top: 100px;
+}
+
+.button--tre {
+    top: 160px;
+}
+
+/* ==================================================================== */
 
 .source, .destination {
     position: absolute;
