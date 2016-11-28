@@ -4,7 +4,7 @@ function drawChart() {
 
     const plot = document.getElementById( 'chart_div' );
 
-    // Create the data tables
+    // CREATE THE DATA TABLES
     const data = new google.visualization.DataTable();
     data.addColumn( 'string', 'Topping' );
     data.addColumn( 'number', 'Slices' );
@@ -16,14 +16,14 @@ function drawChart() {
         [ 'Pepperoni', 2 ]
     ]);
 
-    // Set chart options
+    // SET CHART OPTIONS
     const options = {
         'title': 'How Much Pizza I Ate Last Night',
         'width': plot.clientWidth,
         'height': plot.clientHeight
     };
 
-    // Instantiate and draw our chart, passing in some options
+    // INSTANTIATE AND DRAW OUR CHART, PASSING IN SOME OPTIONS
     const chart = new google.visualization.PieChart( plot );
     chart.draw( data, options );
 }
