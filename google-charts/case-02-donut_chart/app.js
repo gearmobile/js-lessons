@@ -211,7 +211,7 @@ function drawDonutQuattro() {
 
 // INCLUDE LIBRARY AND CALL FUNCTIONS
 // ------------------------------------------------
-google.charts.load( 'visualization', '1', { 'packages': ['corechart'] } );
+google.charts.load( 'current', { 'packages': ['corechart'] } );
 google.charts.setOnLoadCallback( drawDonutUno );
 google.charts.setOnLoadCallback( drawDonutDuo );
 google.charts.setOnLoadCallback( drawDonutTre );
