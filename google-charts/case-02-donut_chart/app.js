@@ -1,5 +1,7 @@
 
 const pieHoleValue = 0.76
+const colorPrimary = 'cyan';
+const colorSecondary = 'lightgrey';
 
 function drawDonutUno() {
 
@@ -29,8 +31,8 @@ function drawDonutUno() {
             // trigger: 'none'
         },
         slices: {
-            0: { color: 'cyan' },
-            1: { color: 'grey' }
+            0: { color: colorPrimary },
+            1: { color: colorSecondary }
         }
     };
 
@@ -72,8 +74,8 @@ function drawDonutDuo() {
             // trigger: 'none'
         },
         slices: {
-            0: { color: 'cyan' },
-            1: { color: 'grey' }
+            0: { color: colorPrimary },
+            1: { color: colorSecondary }
         }
     };
 
@@ -115,8 +117,8 @@ function drawDonutTre() {
             // trigger: 'none'
         },
         slices: {
-            0: { color: 'cyan' },
-            1: { color: 'grey' }
+            0: { color: colorPrimary },
+            1: { color: colorSecondary }
         }
     };
 
@@ -158,8 +160,8 @@ function drawDonutQuattro() {
             // trigger: 'none'
         },
         slices: {
-            0: { color: 'cyan' },
-            1: { color: 'grey' }
+            0: { color: colorPrimary },
+            1: { color: colorSecondary }
         }
     };
 
