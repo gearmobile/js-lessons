@@ -1,4 +1,6 @@
 
+const pieHoleValue = 0.76
+
 function drawDonutUno() {
 
     // element
@@ -17,7 +19,7 @@ function drawDonutUno() {
     // options
     // ---------------------------------------
     const pieOptionsUno = {
-        pieHole: 0.4,
+        pieHole: pieHoleValue,
         legend: 'none',
         pieSliceText: 'none',
         pieSliceTextStyle: {
@@ -60,7 +62,7 @@ function drawDonutDuo() {
     // options
     // ---------------------------------------
     const pieOptionsDuo = {
-        pieHole: 0.4,
+        pieHole: pieHoleValue,
         legend: 'none',
         pieSliceText: 'none',
         pieSliceTextStyle: {
@@ -103,7 +105,7 @@ function drawDonutTre() {
     // options
     // ---------------------------------------
     const pieOptionsTre = {
-        pieHole: 0.4,
+        pieHole: pieHoleValue,
         legend: 'none',
         pieSliceText: 'none',
         pieSliceTextStyle: {
@@ -146,7 +148,7 @@ function drawDonutQuattro() {
     // options
     // ---------------------------------------
     const pieOptionsQuattro = {
-        pieHole: 0.4,
+        pieHole: pieHoleValue,
         legend: 'none',
         pieSliceText: 'none',
         pieSliceTextStyle: {
