@@ -3,6 +3,11 @@ const pieHoleValue = 0.76
 const colorPrimary = 'cyan';
 const colorSecondary = 'lightgrey';
 
+const JS_VALUE = 76;
+const HTML_VALUE = 98;
+const CSS_VALUE = 94;
+const PHOTOSHOP_VALUE = 66;
+
 function drawDonutUno() {
 
     // element
@@ -10,9 +15,17 @@ function drawDonutUno() {
     const pieElementUno = document.querySelector( '#pieChartUno' );
     const rawDataUno = [
         [ 'Technology', 'Skill' ],
-        [ 'JavaScript', 60 ],
-        [ 'NoSkill', 40 ]
+        [ 'JavaScript', JS_VALUE ],
+        [ 'NoSkill', 100 - JS_VALUE ]
     ];
+
+    // add value
+    // --------------------------------------
+    const value = document.createElement( 'div' );
+    value.classList.add( 'piechart-value' );
+    value.innerHTML = rawDataUno[1][1] + '%';
+    document.querySelector( '#diagrammItemUno' ).appendChild( value );
+
 
     // data
     // ---------------------------------------
@@ -53,9 +66,16 @@ function drawDonutDuo() {
     const pieElementDuo = document.querySelector( '#pieChartDuo' );
     const rawDataDuo = [
         [ 'Technology', 'Skill' ],
-        [ 'HTML', 80 ],
-        [ 'NoSkill', 20 ]
+        [ 'HTML', HTML_VALUE ],
+        [ 'NoSkill', 100 - HTML_VALUE ]
     ];
+
+    // add value
+    // --------------------------------------
+    const value = document.createElement( 'div' );
+    value.classList.add( 'piechart-value' );
+    value.innerHTML = rawDataDuo[1][1] + '%';
+    document.querySelector( '#diagrammItemDuo' ).appendChild( value );
 
     // data
     // ---------------------------------------
@@ -96,9 +116,16 @@ function drawDonutTre() {
     const pieElementTre = document.querySelector( '#pieChartTre' );
     const rawDataTre = [
         [ 'Technology', 'Skill' ],
-        [ 'CSS', 80 ],
-        [ 'NoSkill', 20 ]
+        [ 'CSS', CSS_VALUE ],
+        [ 'NoSkill', 100 - CSS_VALUE ]
     ];
+
+    // add value
+    // --------------------------------------
+    const value = document.createElement( 'div' );
+    value.classList.add( 'piechart-value' );
+    value.innerHTML = rawDataTre[1][1] + '%';
+    document.querySelector( '#diagrammItemTre' ).appendChild( value );
 
     // data
     // ---------------------------------------
@@ -139,9 +166,16 @@ function drawDonutQuattro() {
     const pieElementQuattro = document.querySelector( '#pieChartQuattro' );
     const rawDataQuattro = [
         [ 'Technology', 'Skill' ],
-        [ 'PhotoShop', 70 ],
-        [ 'NoSkill', 30 ]
+        [ 'Photoshop', PHOTOSHOP_VALUE ],
+        [ 'NoSkill', 100 - PHOTOSHOP_VALUE ]
     ];
+
+    // add value
+    // --------------------------------------
+    const value = document.createElement( 'div' );
+    value.classList.add( 'piechart-value' );
+    value.innerHTML = rawDataQuattro[1][1] + '%';
+    document.querySelector( '#diagrammItemQuattro' ).appendChild( value );
 
     // data
     // ---------------------------------------
