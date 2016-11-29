@@ -6,17 +6,13 @@
     lost-column-gutter 2rem
     position relative
 
-    @media screen and ( min-width: 50rem )
-        lost-column 1/1
-        lost-column-gutter 2rem
-
-    @media screen and ( min-width: 80rem )
+    @media screen and ( max-width: 800px )
         lost-column 1/2
         lost-column-gutter 2rem
 
-    @media screen and ( max-width: 80rem )
-        lost-column 1/4
-        lost-column-gutter 2rem
+    @media screen and ( max-width: 500px )
+        lost-column 1/1
+        lost-column-gutter 0
 
 .piechart
     min-height 30rem

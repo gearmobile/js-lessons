@@ -6,7 +6,7 @@ window.addEventListener( 'load', function () {
     const colorPrimary = 'cyan';
     const colorSecondary = 'lightgrey';
 
-    // values
+    // VALUES
     // ------------------------------------------
     const JS_VALUE = 76;
     const HTML_VALUE = 98;
