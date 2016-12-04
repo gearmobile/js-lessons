@@ -2,6 +2,7 @@ window.addEventListener( 'load', function () {
     // ----------------------------------------------------------
     const boxUno = document.querySelector( '#box-uno' );
     const boxies = document.querySelectorAll( '.box' );
+    const boxWrapper = document.querySelector( '.box-wrapper' );
     const btnUno = document.querySelector( '#controls-uno' );
     const btnDuo = document.querySelector( '#controls-duo' );
     const btnTre = document.querySelector( '#controls-tre' );
@@ -56,9 +57,21 @@ window.addEventListener( 'load', function () {
         });
     }
     // -----------------------------------------------------------
+    function revertRotation() {
+        boxies.forEach( function ( item ) {
+            TweenMax.to( item, 2, {
+                directionalRotation: 0 + '_short',
+                ease: Bounce.easeOut
+            });
+        });
+    }
+    // -----------------------------------------------------------
     btnUno.addEventListener( 'click', oldFushion, false );
     btnDuo.addEventListener( 'click', clockWise, false );
     btnTre.addEventListener( 'click', counterClockWise, false );
     btnQuattro.addEventListener( 'click', complexRotation, false );
     btnCinque.addEventListener( 'click', randomRotation, false );
+    // -----------------------------------------------------------
+    boxWrapper.addEventListener( 'mouseenter', randomRotation, false );
+    boxWrapper.addEventListener( 'mouseleave', revertRotation, false );
 }, false );
