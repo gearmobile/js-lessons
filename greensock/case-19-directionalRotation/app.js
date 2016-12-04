@@ -1,3 +1,9 @@
+// Directional Rotation Visualizer
+// https://codepen.io/GreenSock/full/jiEyG/
+
+// Fun with GSAP and 3D rotation
+// http://codepen.io/MAW/full/gaaOGa/
+
 window.addEventListener( 'load', function () {
     // ----------------------------------------------------------
     const boxUno = document.querySelector( '#box-uno' );
