@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    font: 400 1.6rem/1.2 'Source Sans Pro', sans-serif;
+    background: #09b39c url( '../logo.svg' ) 100% 96%;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+.intro {
+    color: #fff;
+    text-align: right;
+    padding: 2rem 2rem 0 0;
+    margin: 0 0 6rem 0;
+}
+
+.intro__title {
+    font-size: 8rem;
+    margin: 1rem 0;
+}
+
+.intro__subtitle {
+    font-size: 4rem;
+}
