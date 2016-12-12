@@ -11,9 +11,12 @@ html {
 }
 
 body {
+    width: 100%;
+    height: 100%;
     font: 400 1.6rem/1.2 'Source Sans Pro', sans-serif;
     background: #09b39c url( '../logo.svg' ) 100% 96%;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 h1, h2, h3, h4, p {
